@@ -7,5 +7,6 @@ app.use(express.static(__dirname + '/dist/reduximplementation'))
 app.get('*',function(req,res){
   res.sendFile(path.join(__dirname + '/dist/reduximplementation/index.html'))
 })
-app.use('*',jsonServer.router('db.json'))
+app.use('/api',jsonServer.router('db.json'))
 app.listen(process.env.PORT || 4200)
+app.listen(3000)
