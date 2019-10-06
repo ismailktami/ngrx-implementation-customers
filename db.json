@@ -8,13 +8,6 @@
       "id": 8
     },
     {
-      "name": "qq",
-      "phone": "qqq",
-      "address": "qqq",
-      "membership": "Pro",
-      "id": 9
-    },
-    {
       "name": "ssqssss",
       "phone": "sqsqsqs",
       "address": "sqsqs",
@@ -30,17 +23,10 @@
     },
     {
       "name": "ssss",
-      "phone": "qq",
-      "address": "q",
+      "phone": "qqq",
+      "address": "qq",
       "membership": "Basic",
       "id": 15
-    },
-    {
-      "name": "ssss",
-      "phone": "s",
-      "address": "ss",
-      "membership": "Basic",
-      "id": 16
     },
     {
       "name": "ssss",
