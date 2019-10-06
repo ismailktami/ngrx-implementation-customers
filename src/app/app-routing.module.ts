@@ -8,7 +8,7 @@ const appRoutes: Routes =
   {path: 'customers', loadChildren : '../app/customers/customers.module#CustomersModule'}
   ,  { path: '**', redirectTo: '' }
 
-  ]
+  ];
 
 @NgModule({
   declarations: [],
