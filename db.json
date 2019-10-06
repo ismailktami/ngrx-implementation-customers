@@ -1,0 +1,74 @@
+{
+  "customers": [
+    {
+      "name": "sss",
+      "phone": "ssss",
+      "address": "sss",
+      "membership": "Basic",
+      "id": 8
+    },
+    {
+      "name": "qq",
+      "phone": "qqq",
+      "address": "qqq",
+      "membership": "Pro",
+      "id": 9
+    },
+    {
+      "name": "ssqssss",
+      "phone": "sqsqsqs",
+      "address": "sqsqs",
+      "membership": "Platinum",
+      "id": 10
+    },
+    {
+      "name": "sss",
+      "phone": "qsqsq",
+      "address": "sqsqs",
+      "membership": "Platinum",
+      "id": 11
+    },
+    {
+      "name": "sss",
+      "phone": "sqsqs",
+      "address": "sqsq",
+      "membership": "Pro",
+      "id": 12
+    },
+    {
+      "name": "ssss",
+      "phone": "qq",
+      "address": "q",
+      "membership": "Basic",
+      "id": 15
+    },
+    {
+      "name": "ssss",
+      "phone": "s",
+      "address": "ss",
+      "membership": "Basic",
+      "id": 16
+    },
+    {
+      "name": "ssss",
+      "phone": "1111111111",
+      "address": "sssq",
+      "membership": "Basic",
+      "id": 17
+    },
+    {
+      "name": "Ismail Ktami",
+      "phone": "4444444444",
+      "address": "RUE 22 N39 LOTISSEMENT ANBRA ZWAGHA FES",
+      "membership": "Pro",
+      "id": 18
+    },
+    {
+      "name": "Ismail Ktami",
+      "phone": "5555555555",
+      "address": "RUE 22 N39 LOTISSEMENT ANBRA ZWAGHA FES",
+      "membership": "Pro",
+      "id": 19
+    }
+  ]
+}
