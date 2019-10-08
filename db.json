@@ -32,7 +32,7 @@
       "name": "ssss",
       "phone": "1111111111",
       "address": "sssq",
-      "membership": "Basic",
+      "membership": "Pro",
       "id": 17
     },
     {
@@ -41,13 +41,6 @@
       "address": "RUE 22 N39 LOTISSEMENT ANBRA ZWAGHA FES",
       "membership": "Pro",
       "id": 18
-    },
-    {
-      "name": "Ismail Ktami",
-      "phone": "5555555555",
-      "address": "RUE 22 N39 LOTISSEMENT ANBRA ZWAGHA FES",
-      "membership": "Pro",
-      "id": 19
     }
   ]
 }
