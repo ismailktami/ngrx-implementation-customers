@@ -7,7 +7,7 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class CustomerService {
-  private customersUrl = 'http://localhost:3000/customers';
+  private customersUrl = 'http://localhost:3000/api/customers';
 
   constructor(private http: HttpClient) { }
 

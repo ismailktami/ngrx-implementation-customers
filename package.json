@@ -3,13 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "concurrently \"node server.js\" \"json-server --watch db.json\" ",
+    "start": "node server.js --proxy-config proxy.conf.json",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "ng build --aot --prod"
-
   },
   "private": true,
   "dependencies": {
@@ -37,6 +36,7 @@
     "rxjs": "~6.3.3",
     "rxjs-compat": "^6.5.3",
     "tslib": "^1.9.0",
+    "webpack-dev-server": "^3.8.2",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
