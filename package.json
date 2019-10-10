@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --aot --prod"
+    "postinstall": "ng build --aot --prod",
+    "mock:server": "json-server --watch mocks/data.json"
   },
   "private": true,
   "dependencies": {
@@ -62,5 +63,4 @@
   "engines": {
     "node": "~8.9.1",
     "npm": "~6.0.0"
-  }
-}
+  }}
