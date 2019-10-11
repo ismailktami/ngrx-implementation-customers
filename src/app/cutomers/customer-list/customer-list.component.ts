@@ -4,6 +4,8 @@ import {Customer} from '../customer.module';
 import * as customerActions from '../state/customer.actions';
 import {Observable} from 'rxjs';
 import * as fromCustomerReducer from '../state/customer.reducer';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {debounceTime} from "rxjs/operators";
 @Component({
   selector: 'app-customer-list',
   templateUrl: './customer-list.component.html',
@@ -13,7 +15,10 @@ export class CustomerListComponent implements OnInit {
 customers$: Observable<Customer[]>;
 error$: Observable<string>;
 config: any;
-  constructor(private store: Store<fromCustomerReducer.AppState>) { }
+customerSearch: FormGroup;
+submitted = false;
+
+  constructor(private store: Store<fromCustomerReducer.AppState> ,     private fb: FormBuilder) { }
 
   ngOnInit() {
     this.store.dispatch(new customerActions.LoadCustomers());
@@ -26,10 +31,27 @@ config: any;
         return data.length;
       })
     };
-
+    this.instantiateForm();
   }
+  instantiateForm() {
+    this.customerSearch = this.fb.group({
+      search: ['', [Validators.required, Validators.minLength(1)]],
+    });
+  }
+  get f() { return this.customerSearch.controls; }
 
-  pageChanged(event){
+  onSubmit() {
+    this.submitted = true;
+    if (this.customerSearch.invalid) {
+      console.log(this.customerSearch.invalid);
+      return;
+    }
+    this.searchCustomer();
+  }
+  searchCustomer() {
+    this.store.dispatch(new customerActions.SearchCustomers(this.customerSearch.get('search').value));
+  }
+  pageChanged(event) {
     this.config.currentPage = event;
   }
 
@@ -41,4 +63,10 @@ config: any;
       this.store.dispatch(new customerActions.DeleteCustomer(customer.id));
     }
   }
+
+  onKey(event: any) { // without type info
+
+    this.store.dispatch(new customerActions.SearchCustomers(event.target.value));
+  }
+
 }

@@ -53,6 +53,26 @@ export  function customerReducer(state= initialeState, action: customerActions.A
       error: action.payload
     };
     }
+    case customerActions.CustomerActionType.SEARCH_CUSTOMERS_SUCCESS: {
+      return customerAdapter.addAll(action.payload,
+        {...state,
+          loading: false,
+          loaded: true,
+          customers: action.payload
+        });
+    }
+
+    case customerActions.CustomerActionType.SEARCH_CUSTOMERS_FAIL: {
+
+      return {...state,
+        entities: {},
+        loading: false,
+        loaded: false,
+        error: action.payload
+      };
+    }
+
+
     case customerActions.CustomerActionType.LOAD_CUSTOMER_SUCCESS: {
       return customerAdapter.addOne(action.payload, {
         ...state,

@@ -17,6 +17,9 @@ export enum CustomerActionType {
   DELETE_CUSTOMER = '[Customer] delete Customer',
   DELETE_CUSTOMER_SUCCESS = '[Customer] delete Customer Success',
   DELETE_CUSTOMER_FAIL = '[Customer] delete Customer FAIL',
+  SEARCH_CUSTOMERS = '[Customer] SEARCH Customers',
+  SEARCH_CUSTOMERS_SUCCESS = '[Customer] SEARCH Customers Success',
+  SEARCH_CUSTOMERS_FAIL = '[Customer] SEARCH Customers FAIL'
 }
 
 
@@ -34,6 +37,24 @@ export class LoadCustomersFail implements Action {
   constructor(public payload: string) {
   }
 }
+
+export class SearchCustomers implements Action {
+  readonly  type = CustomerActionType.SEARCH_CUSTOMERS;
+  constructor( public payload: string ) {}
+
+}
+
+export class SearchCustomersSuccess implements Action {
+  readonly  type = CustomerActionType.SEARCH_CUSTOMERS_SUCCESS;
+  constructor( public payload: Customer[] ) {}
+}
+export class SearchCustomersFail implements Action {
+  readonly type = CustomerActionType.SEARCH_CUSTOMERS_FAIL;
+  constructor(public payload: string) {
+  }
+}
+
+
 
 
 
@@ -112,6 +133,7 @@ export class DeleteCustomerFail implements Action {
 export type Action=
 
   LoadCustomers| LoadCustomersSuccess | LoadCustomersFail|
+  SearchCustomers| SearchCustomersSuccess | SearchCustomersFail|
   LoadCustomer| LoadCustomerSuccess | LoadCustomerFail|
   CreateCustomer| CreateCustomerSuccess | CreateCustomerFail|
 UpdateCustomer| UpdateCustomerSuccess | UpdateCustomerFail|

@@ -4,8 +4,6 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Store} from '@ngrx/store';
 import * as fromCustomer from '../state/customer.reducer';
 import * as customerActions from '../state/customer.actions';
-
-import { NgProgress } from 'ngx-progressbar';
 @Component({
   selector: 'app-customer-add',
   templateUrl: './customer-add.component.html',

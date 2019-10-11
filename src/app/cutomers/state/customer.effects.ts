@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {Actions, Effect , ofType} from '@ngrx/effects';
 import {Action} from '@ngrx/store';
 import {Observable , of } from 'rxjs';
-import {map , mergeMap , catchError } from 'rxjs/operators';
+import {map, mergeMap, catchError, filter, debounceTime} from 'rxjs/operators';
 import {CustomerService} from '../customer.service';
 import * as customerActions from '../state/customer.actions';
 import {Customer} from '../customer.module';
@@ -30,6 +30,23 @@ export class CustomerEffect {
       )
     )
   );
+
+
+  @Effect()
+  searchCustomers: Observable<Action> = this.actions$.pipe(
+    ofType<customerActions.SearchCustomers>(
+      customerActions.CustomerActionType.SEARCH_CUSTOMERS
+    ),
+    mergeMap((action: customerActions.SearchCustomers) =>
+      this.customerService.getCustomers().pipe(
+        debounceTime(5000),
+        map(
+          (customers: Customer[]) => new customerActions.SearchCustomersSuccess(customers.filter(e => e.name.includes(action.payload))),
+        catchError(err => of(new customerActions.SearchCustomersFail(err)))
+      )
+    )
+  ));
+
 
 
   @Effect()

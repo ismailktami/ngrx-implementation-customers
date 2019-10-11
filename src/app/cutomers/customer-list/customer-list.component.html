@@ -1,4 +1,16 @@
 <h3>Customers</h3>
+<form [formGroup]="customerSearch" (ngSubmit)="onSubmit()" class="form-inline mb-4">
+  <label class="sr-only" for="search">Search</label>
+  <div class="input-group mb-2 mr-sm-2">
+    <input type="text"  class="form-control" (keyup)="onKey($event)" formControlName="search" placeholder="search" [ngClass]="{ 'is-invalid': submitted && f.search.errors }">
+  </div>
+  <button  class="btn btn-primary mb-2">Search Customers</button>
+</form>
+
+
+
+
+
 <div  *ngIf="error$ | async as error" class="alert alert-dismissible alert-danger">
   <button type="button" class="close" data-dismiss="alert">&times;</button>
   <strong>Oh shit!</strong> <a href="#" class="alert-link">{{error.toString()}}</a>

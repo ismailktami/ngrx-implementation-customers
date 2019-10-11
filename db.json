@@ -1,11 +1,12 @@
 {
   "customers": [
     {
-      "name": "sss",
-      "phone": "ssss",
-      "address": "sss",
+      "name": "ismail",
+      "phone": "4444444449",
+      "address": "sssdd",
       "membership": "Basic",
-      "id": 8
+      "id": 8,
+      "products": []
     },
     {
       "name": "ssqssss",
@@ -15,32 +16,61 @@
       "id": 10
     },
     {
-      "name": "sss",
-      "phone": "qsqsq",
+      "name": "sssqq",
+      "phone": "1111111111",
       "address": "sqsqs",
       "membership": "Platinum",
       "id": 11
     },
     {
       "name": "ssss",
-      "phone": "qqq",
-      "address": "qq",
-      "membership": "Basic",
-      "id": 15
+      "phone": "1111111111",
+      "address": "qqssss",
+      "membership": "Pro",
+      "id": 15,
+      "products": [
+        {
+          "id": 1,
+          "price": 245,
+          "lib": "product1"
+        },
+        {}
+      ]
     },
     {
-      "name": "ssss",
+      "name": "sssq",
       "phone": "1111111111",
-      "address": "sssq",
-      "membership": "Pro",
+      "address": "RUE 22 N39 LOTISSEMENT ANBRA ZWAGHA FES",
+      "membership": "Platinum",
+      "id": 16
+    },
+    {
+      "name": "Ismail Ktami",
+      "phone": "1111111111",
+      "address": "RUE 22 N39 LOTISSEMENT ANBRA ZWAGHA FES",
+      "membership": "Platinum",
       "id": 17
     },
     {
       "name": "Ismail Ktami",
-      "phone": "4444444444",
+      "phone": "1111111111",
+      "address": "RUE 22 N39 LOTISSEMENT ANBRA ZWAGHA FES",
+      "membership": "Platinum",
+      "id": 18
+    },
+    {
+      "name": "Ismailktami",
+      "phone": "1111111111",
       "address": "RUE 22 N39 LOTISSEMENT ANBRA ZWAGHA FES",
       "membership": "Pro",
-      "id": 18
+      "id": 19
+    },
+    {
+      "name": "qqqqq",
+      "phone": "4444444444",
+      "address": "RUE 22 N39 LOTISSEMENT ANBRA ZWAGHA FES",
+      "membership": "Platinum",
+      "id": 20
     }
   ]
 }

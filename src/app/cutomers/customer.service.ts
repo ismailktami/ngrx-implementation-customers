@@ -35,6 +35,9 @@ export class CustomerService {
   deleteCustomer(payload: number) {
     return this.http.delete(`${this.customersUrl}/${payload}`);
   }
+  getCustomersbyString(payload: string): Observable<Customer[]> {
+    return this.http.get<Customer[]>(this.customersUrl);
+  }
 }
 
 
