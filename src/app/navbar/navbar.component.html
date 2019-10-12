@@ -9,10 +9,14 @@
       <li class="nav-item active">
         <a class="nav-link" [routerLink]="['/customers']" >Customers</a>
       </li>
+      <li class="nav-item active" >
+        <a class="nav-link "  (click)="logout()" style="margin-left: 20px;cursor: pointer;" >Logout</a>
+      </li>
     </ul>
     <ul class="navbar-nav ml-auto">
     </ul>
     <span class=" navbar-brand navbar-text" style="cursor:pointer;" [routerLink]="['']">NGRX Implementation</span>
+
   </div>
 
 

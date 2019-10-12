@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import {Store, select} from '@ngrx/store';
 import {Customer} from '../customer.module';
 import * as customerActions from '../state/customer.actions';
-import {Observable} from 'rxjs';
+import {fromEvent, Observable, Subscription} from 'rxjs';
 import * as fromCustomerReducer from '../state/customer.reducer';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {debounceTime} from "rxjs/operators";
+import {debounceTime} from 'rxjs/operators';
 @Component({
   selector: 'app-customer-list',
   templateUrl: './customer-list.component.html',
@@ -32,7 +32,20 @@ submitted = false;
       })
     };
     this.instantiateForm();
+    this.keyUpforSearch();
+    this.keyUpforSearch();
   }
+
+  keyUpforSearch() {
+    const keyups = fromEvent(document.querySelector('#search'), 'keyup');
+    keyups.pipe(
+      debounceTime(500)
+    ).subscribe((event: any ) => {
+      this.store.dispatch(new customerActions.SearchCustomers(event.target.value));
+    });
+
+  }
+
   instantiateForm() {
     this.customerSearch = this.fb.group({
       search: ['', [Validators.required, Validators.minLength(1)]],
@@ -63,10 +76,10 @@ submitted = false;
       this.store.dispatch(new customerActions.DeleteCustomer(customer.id));
     }
   }
-
+/*
   onKey(event: any) { // without type info
 
     this.store.dispatch(new customerActions.SearchCustomers(event.target.value));
   }
-
+*/
 }

@@ -9,11 +9,17 @@ import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {EffectsModule} from '@ngrx/effects';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgProgressModule, NgProgressInterceptor } from 'ngx-progressbar';
+import { LoginComponent } from './login/login.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { SignupComponent } from './signup/signup.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavbarComponent,
+    LoginComponent,
+    SignupComponent,
   ],
   providers: [    { provide: HTTP_INTERCEPTORS, useClass: NgProgressInterceptor, multi: true }  ],
   imports: [
@@ -23,6 +29,8 @@ import { NgProgressModule, NgProgressInterceptor } from 'ngx-progressbar';
     EffectsModule.forRoot([]),
     HttpClientModule,
     NgProgressModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule
 
   ],
